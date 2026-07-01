@@ -1,0 +1,32 @@
+{
+  "name": "learning-node",
+  "version": "1.0.0",
+  "description": "Following an O'Reilly \"The Complete Node.js Bootcamp 2026\" course",
+  "keywords": [
+    "Node.js",
+    "learning"
+  ],
+  "homepage": "https://github.com/alex-d-bondarev/learning-node#readme",
+  "bugs": {
+    "url": "https://github.com/alex-d-bondarev/learning-node/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alex-d-bondarev/learning-node.git"
+  },
+  "license": "MIT",
+  "author": "Sasha",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"WARNING: No tests yet\" && exit 1",
+    "dev_start": "nodemon index.js"
+  },
+  "dependencies": {
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "mongodb": "^7.4.0",
+    "mongoose": "^9.7.3",
+    "nodemon": "^3.1.14"
+  }
+}
