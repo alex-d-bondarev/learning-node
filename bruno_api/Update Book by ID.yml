@@ -1,0 +1,23 @@
+info:
+  name: Update Book by ID
+  type: http
+  seq: 4
+
+http:
+  method: PUT
+  url: http://{{app_host}}:3000/books/{{book_id}}
+  body:
+    type: json
+    data: |-
+      {
+        "bookName": "Updated Book",
+        "countInStock": 201,
+        "__v": 0
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

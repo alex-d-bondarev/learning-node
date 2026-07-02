@@ -1,0 +1,22 @@
+info:
+  name: New Book
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: http://{{app_host}}:3000/books
+  body:
+    type: json
+    data: |-
+      {
+        "bookName": "Test Book",
+        "countInStock": 42
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
