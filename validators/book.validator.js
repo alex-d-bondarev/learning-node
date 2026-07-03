@@ -2,17 +2,17 @@ const {body, validationResult, param} = require("express-validator");
 
 const createBookValidation = [
     body("bookName")
-        .notEmpty().withMessage("Book name is required.")
-        .isLength({min: 5, max: 100}).withMessage("Book name must be between 5 and 100 characters."),
+        .notEmpty().withMessage((value, {req}) => req.t("bookNameRequiredValidation"))
+        .isLength({min: 5, max: 100}).withMessage((value, {req}) => req.t("bookNameLengthValidation")),
     body("price")
-        .notEmpty().withMessage("Price is required.")
-        .isFloat({min: 0.01, max: 10000}).withMessage("Price must be between $0.01 and $10,000."),
+        .notEmpty().withMessage((value, {req}) => req.t("bookPriceRequiredValidation"))
+        .isFloat({min: 0.01, max: 10000}).withMessage((value, {req}) => req.t("bookPriceValueValidation")),
     body("countInStock")
-        .notEmpty().withMessage("Stock count is required.")
-        .isInt({min: 0, max: 100}).withMessage("Stock count must be between 1 and 100 (inclusive)."),
+        .notEmpty().withMessage((value, {req}) => req.t("bookStockRequiredValidation"))
+        .isInt({min: 0, max: 100}).withMessage((value, {req}) => req.t("bookStockValueValidation")),
     body("image")
-        .notEmpty().withMessage("Image URL is required.")
-        .isURL().withMessage("Image must be a valid URL.")
+        .notEmpty().withMessage((value, {req}) => req.t("bookImageRequiredValidation"))
+        .isURL().withMessage((value, {req}) => req.t("bookImageValueValidation"))
 ]
 
 const updateBookValidation = [
