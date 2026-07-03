@@ -1,11 +1,13 @@
 const express = require('express');
-
-const router = express.Router();
 const BookModel = require("../models/book.model");
 const {
-    createBookValidation, idValidation, updateBookValidation, handleValidationErrors
+    createBookValidation,
+    idValidation,
+    updateBookValidation,
+    handleValidationErrors,
 } = require("../validators/book.validator");
 
+const router = express.Router();
 
 router.post(
     "/", createBookValidation, handleValidationErrors, async (req, res) => {
@@ -32,7 +34,7 @@ router.get("/:id", idValidation, handleValidationErrors, async (req, res) => {
             const book = await BookModel.findById(id)
 
             if (!book) {
-                res.status(404).json({message: `Book with ID ${id} not found`})
+                return res.status(404).json({message: req.t("bookNotFound")})
             }
 
             res.status(200).json(book)
@@ -48,9 +50,9 @@ router.delete("/:id", idValidation, handleValidationErrors, async (req, res) => 
             const deletedBook = await BookModel.findByIdAndDelete(id)
 
             if (!deletedBook) {
-                res.status(404).json({message: `Book with ID ${id} not found`})
+                return res.status(404).json({message: req.t("bookNotFound")})
             }
-            res.status(200).json({message: `Book with ID ${id} deleted successfully`})
+            res.status(200).json({message: req.t("bookDeletedSuccessfully")})
         } catch (error) {
             res.status(400).json({message: error.message})
         }
@@ -63,9 +65,9 @@ router.put("/:id", idValidation, updateBookValidation, handleValidationErrors, a
         const updatedBook = await BookModel.findByIdAndUpdate(id, req.body, {new: true})
 
         if (!updatedBook) {
-            res.status(404).json({message: `Book with ID ${id} not found`})
+            return res.status(404).json({message: req.t("bookNotFound")})
         }
-        res.status(200).json({message: `Book with ID ${id} updated successfully`, updatedBook})
+        res.status(200).json({message: req.t("bookUpdatedSuccessfully"), updatedBook})
     } catch (error) {
         res.status(400).json({message: error.message})
     }

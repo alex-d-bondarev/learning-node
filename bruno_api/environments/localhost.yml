@@ -1,8 +1,10 @@
 name: localhost
 variables:
   - name: book_id
-    value: 6a465aced88277bf17db65
+    value: 6a46de10f8cdb72a9bc592dc
   - name: book_endpoint
     value: book
   - name: app_url
     value: http://127.0.0.1:3000
+  - name: locale
+    value: uk
