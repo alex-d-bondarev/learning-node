@@ -5,14 +5,16 @@ info:
 
 http:
   method: PUT
-  url: http://{{app_host}}:3000/books/{{book_id}}
+  url: "{{app_url}}/{{book_endpoint}}/{{book_id}}"
   body:
     type: json
     data: |-
       {
-        "bookName": "Updated Book",
-        "countInStock": 201,
-        "__v": 0
+        "bookName": "Pricy book",
+        "countInStock": 32,
+        "price": 9876.54,
+        "dateCreated": "2026-07-02T21:25:30.395Z",
+        "image": "http://example.com"
       }
   auth: inherit
 

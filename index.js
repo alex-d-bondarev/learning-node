@@ -6,81 +6,10 @@ const mongoose = require("mongoose")
 const app = express()
 const port = 3000
 
+const bookRouter = require("./routes/book.routes")
+
 app.use(express.json())
-
-const bookSchema = mongoose.Schema({
-    bookName: {
-        type: String,
-        required: true,
-    },
-    countInStock: {
-        type: Number,
-        required: true,
-    }
-})
-
-BookModel = mongoose.model("Book", bookSchema)
-
-app.post("/books", async (req, res) => {
-    try {
-        const newBook = await BookModel.create(req.body)
-        res.status(201).json(newBook)
-    } catch (error) {
-        res.status(400).json({message: error.message})
-    }
-})
-
-app.get("/books", async (req, res) => {
-    try {
-        const bookList = await BookModel.find()
-        res.status(200).send(bookList)
-    } catch (error) {
-        res.status(400).json({message: error.message})
-    }
-})
-
-app.get("/books/:id", async (req, res) => {
-    try {
-        const {id} = req.params
-        const book = await BookModel.findById(id)
-
-        if (!book) {
-            res.status(404).json({message: `Book with ID ${id} not found`})
-        }
-
-        res.status(200).json(book)
-    } catch (error) {
-        res.status(400).json({message: error.message})
-    }
-})
-
-app.delete("/books/:id", async (req, res) => {
-    try {
-        const {id} = req.params
-        const deletedBook = await BookModel.findByIdAndDelete(id)
-
-        if (!deletedBook) {
-            res.status(404).json({message: `Book with ID ${id} not found`})
-        }
-        res.status(200).json({message: `Book with ID ${id} deleted successfully`})
-    } catch (error) {
-        res.status(400).json({message: error.message})
-    }
-})
-
-app.put("/books/:id", async (req, res) => {
-    try {
-        const {id} = req.params
-        const updatedBook = await BookModel.findByIdAndUpdate(id, req.body, {new: true})
-
-        if (!updatedBook) {
-            res.status(404).json({message: `Book with ID ${id} not found`})
-        }
-        res.status(200).json({message: `Book with ID ${id} updated successfully`, updatedBook})
-    } catch (error) {
-        res.status(400).json({message: error.message})
-    }
-})
+app.use("/book", bookRouter)
 
 mongoose.connect(process.env.MONGO_CONNECTION_STRING)
     .then(() => console.log("MongoDB Connected!"))

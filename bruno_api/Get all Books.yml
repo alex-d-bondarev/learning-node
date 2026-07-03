@@ -5,7 +5,7 @@ info:
 
 http:
   method: GET
-  url: http://{{app_host}}:3000/books
+  url: "{{app_url}}/{{book_endpoint}}"
   auth: inherit
 
 settings:

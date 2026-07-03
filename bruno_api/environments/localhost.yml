@@ -1,6 +1,8 @@
 name: localhost
 variables:
-  - name: app_host
-    value: 127.0.0.1
   - name: book_id
-    value: 6a46519ffe21c4ad313027b3
+    value: 6a465aced88277bf17db65f1
+  - name: book_endpoint
+    value: book
+  - name: app_url
+    value: http://127.0.0.1:3000

@@ -5,13 +5,15 @@ info:
 
 http:
   method: POST
-  url: http://{{app_host}}:3000/books
+  url: "{{app_url}}/{{book_endpoint}}"
   body:
     type: json
     data: |-
       {
-        "bookName": "Test Book",
-        "countInStock": 42
+        "bookName": "Valid book",
+        "countInStock": 50,
+        "price": 9.99,
+        "image": "https://example.com"
       }
   auth: inherit
 
