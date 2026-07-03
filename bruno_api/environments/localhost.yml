@@ -1,7 +1,7 @@
 name: localhost
 variables:
   - name: book_id
-    value: 6a465aced88277bf17db65f1
+    value: 6a465aced88277bf17db65
   - name: book_endpoint
     value: book
   - name: app_url

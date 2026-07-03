@@ -11,8 +11,8 @@ http:
     data: |-
       {
         "bookName": "Pricy book",
-        "countInStock": 32,
-        "price": 9876.54,
+        "countInStock": 9,
+        "price": 10000,
         "dateCreated": "2026-07-02T21:25:30.395Z",
         "image": "http://example.com"
       }

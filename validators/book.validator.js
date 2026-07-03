@@ -16,8 +16,6 @@ const createBookValidation = [
 ]
 
 const updateBookValidation = [
-    param("id")
-        .isMongoId().withMessage("Invalid Book ID."),
     body("bookName")
         .optional()
         .isLength({min: 5, max: 100}).withMessage("Book name must be between 5 and 100 characters."),
@@ -32,6 +30,10 @@ const updateBookValidation = [
         .isURL().withMessage("Image must be a valid URL.")
 ]
 
+const idValidation = [
+    param("id").isMongoId().withMessage("Invalid Book ID"),
+]
+
 const handleValidationErrors = (req, res, next) => {
     const validationErrors = validationResult(req);
     if (!validationErrors.isEmpty()) {
@@ -42,6 +44,7 @@ const handleValidationErrors = (req, res, next) => {
 
 module.exports = {
     createBookValidation,
+    idValidation,
     updateBookValidation,
     handleValidationErrors,
 }
