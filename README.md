@@ -2,7 +2,7 @@
 
 ```shell
 # Build project
-npm install
+npm ci
 
 # Launch
 npm run dev_start 

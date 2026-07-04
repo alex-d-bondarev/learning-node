@@ -23,14 +23,20 @@
     "dev_start": "nodemon index.js"
   },
   "dependencies": {
-    "dotenv": "^17.4.2",
-    "express": "^5.2.1",
-    "express-validator": "^7.3.2",
-    "i18next": "^26.3.4",
-    "i18next-fs-backend": "^2.6.6",
-    "i18next-http-middleware": "^3.9.7",
-    "mongodb": "^7.4.0",
-    "mongoose": "^9.7.3",
-    "nodemon": "^3.1.14"
+    "dotenv": "17.4.2",
+    "express": "5.2.1",
+    "express-jwt": "8.5.1",
+    "express-validator": "7.3.2",
+    "i18next": "26.3.4",
+    "i18next-fs-backend": "2.6.6",
+    "i18next-http-middleware": "3.9.7",
+    "jsonwebtoken": "9.0.3",
+    "jwt-decode": "4.0.0",
+    "mongodb": "7.4.0",
+    "mongoose": "9.7.3",
+    "multer": "2.2.0"
+  },
+  "devDependencies": {
+    "nodemon": "3.1.14"
   }
 }
