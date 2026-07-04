@@ -1,0 +1,27 @@
+info:
+  name: New Book
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{app_url}}/{{book_endpoint}}"
+  headers:
+    - name: Accept-Language
+      value: "{{locale}}"
+  body:
+    type: json
+    data: |-
+      {
+        "bookName": "Bridge Baby",
+        "countInStock": 1,
+        "price": 9.99,
+        "image": "https://example.com"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
