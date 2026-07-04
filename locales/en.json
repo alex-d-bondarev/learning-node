@@ -9,5 +9,6 @@
   "bookStockRequiredValidation": "Stock count is required.",
   "bookStockValueValidation": "Stock count must be between 1 and 100.",
   "bookImageRequiredValidation": "Image URL is required.",
-  "bookImageValueValidation": "Image must be a valid URL."
+  "bookImageValueValidation": "Image must be a valid URL.",
+  "bookIdValueValidation": "Book ID must be a valid MongoDB ObjectId."
 }

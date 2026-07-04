@@ -18,20 +18,20 @@ const createBookValidation = [
 const updateBookValidation = [
     body("bookName")
         .optional()
-        .isLength({min: 5, max: 100}).withMessage("Book name must be between 5 and 100 characters."),
+        .isLength({min: 5, max: 100}).withMessage((value, {req}) => req.t("bookNameLengthValidation")),
     body("price")
         .optional()
-        .isFloat({min: 0.01, max: 10000}).withMessage("Price must be between $0.01 and $10,000."),
+        .isFloat({min: 0.01, max: 10000}).withMessage((value, {req}) => req.t("bookPriceValueValidation")),
     body("countInStock")
         .optional()
-        .isInt({min: 0, max: 100}).withMessage("Stock count must be between 1 and 100."),
+        .isInt({min: 0, max: 100}).withMessage((value, {req}) => req.t("bookStockValueValidation")),
     body("image")
         .optional()
-        .isURL().withMessage("Image must be a valid URL.")
+        .isURL().withMessage((value, {req}) => req.t("bookImageValueValidation"))
 ]
 
 const idValidation = [
-    param("id").isMongoId().withMessage("Invalid Book ID"),
+    param("id").isMongoId().withMessage((value, {req}) => req.t("bookIdValueValidation")),
 ]
 
 const handleValidationErrors = (req, res, next) => {

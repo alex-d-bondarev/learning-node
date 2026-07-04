@@ -9,5 +9,6 @@
   "bookStockRequiredValidation": "Необхідно зазначити товарний запас.",
   "bookStockValueValidation": "Кількість товарних позицій має бути від 1 до 100.",
   "bookImageRequiredValidation": "URL-адреса зображення обов'язкова.",
-  "bookImageValueValidation": "Зображення має бути дійсною URL-адресою."
+  "bookImageValueValidation": "Зображення має бути дійсною URL-адресою.",
+  "bookIdValueValidation": "Ідентифікатор книги має бути дійсним ідентифікатором MongoDB."
 }

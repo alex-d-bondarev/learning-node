@@ -9,5 +9,6 @@
   "bookStockRequiredValidation": "Необходимо указать товарный запас.",
   "bookStockValueValidation": "Количество товара должно быть в диапазоне от 1 до 100.",
   "bookImageRequiredValidation": "Необходимо указать URL изображения.",
-  "bookImageValueValidation": "Изображение должно быть действительным URL-адресом."
+  "bookImageValueValidation": "Изображение должно быть действительным URL-адресом.",
+  "bookIdValueValidation": "Идентификатор книги должен быть валидным для MongoDB."
 }
