@@ -13,9 +13,9 @@ http:
     type: json
     data: |-
       {
-        "bookName": "Bridge Baby",
-        "countInStock": 1,
-        "price": 9.99,
+        "bookName": "From On Render",
+        "countInStock": 10,
+        "price": 0.01,
         "image": "https://example.com"
       }
   auth: inherit

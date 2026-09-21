@@ -13,9 +13,9 @@ http:
     type: json
     data: |-
       {
-        "bookName": "Updated book",
-        "countInStock": 9,
-        "price": 9.99,
+        "bookName": "Bridge Baby",
+        "countInStock": -9,
+        "price": 99.99,
         "dateCreated": "2026-07-02T21:25:30.395Z",
         "image": "http://example.com"
       }
