@@ -6,4 +6,7 @@ npm ci
 
 # Launch
 npm run dev_start 
+
+# Update dependencies
+npm install  
 ```
