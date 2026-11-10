@@ -33,7 +33,7 @@
     "jsonwebtoken": "9.0.3",
     "jwt-decode": "4.0.0",
     "mongodb": "7.4.0",
-    "mongoose": "9.7.3",
+    "mongoose": "9.11.4",
     "multer": "2.3.0"
   },
   "devDependencies": {
